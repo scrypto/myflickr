@@ -29,7 +29,7 @@ For first time use, run `npm install`.
  
 To start the app, run `npm start`.
 
-To bundle the app, run `npm build`.
+To bundle the app, run `npm run build`.
 
 To test the app, run `npm test`.
 

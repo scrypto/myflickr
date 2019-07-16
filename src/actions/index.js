@@ -1,16 +1,21 @@
-export const GET_POSTS_SUCCESS = 'GET_POSTS_SUCCESS';
-export const SET_LOADING = 'SET_LOADING';
+import * as types from './actionTypes';
 
 export function getPostsSuccess(items) {
     return {
-        type: GET_POSTS_SUCCESS,
+        type: types.GET_POSTS_SUCCESS,
         items,
+    };
+}
+
+export function getPostsFailure() {
+    return {
+        type: types.GET_POSTS_FAILURE,
     };
 }
 
 export function setLoading(loading) {
     return {
-        type: SET_LOADING,
+        type: types.SET_LOADING,
         loading
     };
 }

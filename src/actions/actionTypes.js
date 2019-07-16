@@ -1,0 +1,3 @@
+export const GET_POSTS_SUCCESS = 'GET_POSTS_SUCCESS';
+export const GET_POSTS_FAILURE = 'GET_POSTS_FAILURE';
+export const SET_LOADING = 'SET_LOADING';

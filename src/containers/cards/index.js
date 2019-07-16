@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Card from '../../components/card';
 import Loading from '../../components/loading';
-// import Waypoint from 'react-waypoint';
-// import Pagination from "react-js-pagination";
+import Error from '../../components/error';
 import { getPosts } from '../../apis/posts';
-// import { pagingAmount, initialSearchTerm } from '../../config'
 import style from './style.scss'
 
 class Index extends Component {
@@ -15,6 +13,7 @@ class Index extends Component {
         this.state = {
             loading: false,
             tags: "",
+            error: false,
         };
     }
 
@@ -25,6 +24,11 @@ class Index extends Component {
     render() {
         return (
             <>
+                {this.props.error && (
+                    <div className="error">
+                        <Error message="There is an issue with flickr search. Please try again later." />
+                    </div>
+                )}
                 {this.props.loading && (
                     <div className="loading">
                         <Loading />
@@ -53,6 +57,7 @@ const mapStateToProps = function(store) {
     return {
         loading: store.postState.loading,
         items: store.postState.items,
+        error: store.postState.error,
     };
 };
 

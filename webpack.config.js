@@ -25,7 +25,6 @@ module.exports = {
             '/flickr/': {
                 target: 'https://www.flickr.com',
                 pathRewrite: {'^/flickr/' : '/services/feeds/photos_public.gne?format=json&nojsoncallback=true&tags='},
-                // pathRewrite: function (path, req) { return path.replace('/flickr/', '/services/feeds/photos_public.gne?format=json&nojsoncallback=true&tags=') },
                 changeOrigin: true,
                 secure: false,
             }

@@ -1,9 +1,10 @@
 import { combineReducers } from 'redux';
-import {GET_POSTS_SUCCESS, SET_LOADING} from "../actions";
+import { GET_POSTS_SUCCESS, GET_POSTS_FAILURE, SET_LOADING } from "../actions/actionTypes";
 
 const initialState = {
     loading: true,
     items: [],
+    error: false,
 };
 
 const postsReducer = function(state = initialState, action) {
@@ -14,6 +15,12 @@ const postsReducer = function(state = initialState, action) {
                 items: [
                     ...action.items,
                 ],
+                error: false,
+            };
+        case GET_POSTS_FAILURE:
+            return {
+                ...state,
+                error: true,
             };
         case SET_LOADING:
             return {
