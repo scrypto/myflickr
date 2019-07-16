@@ -40,7 +40,7 @@ class Index extends Component {
                             this.props.items.map((item, id) => {
                                     return (
                                         <Card
-                                            key={id}
+                                            key={item.media.m}
                                             item={item}
                                         />
                                     )
