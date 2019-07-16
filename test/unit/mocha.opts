@@ -1,0 +1,6 @@
+--require ignore-styles
+--require babel-register.js
+--require test/helpers.js
+--require test/dom.js
+--require test/unit/setup.js
+--recursive test/unit/**/**/*.test.js

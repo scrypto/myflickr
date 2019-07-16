@@ -1,0 +1,56 @@
+@import '../../styles/index';
+
+.card {
+    font-size: 12px;
+    width: 240px;
+    padding: 20px 8px;
+    display: flex;
+    flex-direction: column;
+    transition: background 0.25s linear;
+    background-color: transparent;
+
+    &:hover {
+        background-color: $container-hover;
+    }
+    .thumbnail {
+        height: 240px;
+        display: flex;
+        justify-content: center;
+        .link {
+            display: flex;
+            height: 100%;
+            align-items: center;
+        }
+    }
+    .details {
+        height: 80px;
+        margin: 10px 0;
+        .item {
+            .label {
+                font-weight: bold;
+                padding-right: 3px;
+            }
+            .value {
+                word-wrap: break-word;
+            }
+        }
+    }
+    .button {
+        display: block;
+        background: $button-background;
+        color: $button-text;
+        text-align: center;
+        font-size: 14px;
+        font-family: Helvetica, Arial;
+
+        &:hover {
+            background: $button-background-hover;
+        }
+
+        .link {
+            width: 100%;
+            display: block;
+            padding: 10px 0;
+        }
+    }
+}
