@@ -37,10 +37,10 @@ class Index extends Component {
                 {!this.props.loading && (
                     <div className="cards">
                         {
-                            this.props.items.map((item, id) => {
+                            this.props.items.map((item) => {
                                     return (
                                         <Card
-                                            key={item.media.m}
+                                            key={item.id}
                                             item={item}
                                         />
                                     )

@@ -1,0 +1,1 @@
+export const flickrAPIKey = 'bb91146910c2b7a5e85468975a413dcf';

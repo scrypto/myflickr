@@ -2,13 +2,11 @@ import * as React from 'react';
 import Card from 'src/components/card';
 
 const defaultItem = {
-    author: "nobody@flickr.com (\"Jo's Album\")",
-    date_taken: "2019-07-15T02:12:18-08:00",
+    ownername: "Jo Smith",
+    datetaken: "2019-07-15T02:12:18-08:00",
     tags: "tag1 tag2 tag3 tag4",
-    link: "https://www.flickr.com/photos/54989697@N02/48288403276/",
-    media: {
-        m: "https://live.staticflickr.com/65535/48288403276_e0e4d71cdf_m.jpg",
-    }
+    url_o: "https://www.flickr.com/photos/54989697@N02/48288403276/",
+    url_n: "https://live.staticflickr.com/65535/48288403276_e0e4d71cdf_m.jpg"
 };
 
 describe("Component: Card", () => {
@@ -19,7 +17,7 @@ describe("Component: Card", () => {
         const thumbnail = card.find(".thumbnail");
         const thumbnailImage = thumbnail.find("img");
         expect(thumbnailImage).to.have.props({
-            src: defaultItem.media.m,
+            src: defaultItem.url_n,
         });
 
         const details = card.find(".details");
@@ -28,7 +26,7 @@ describe("Component: Card", () => {
         const expectedItems = [
             {
                 label: "Author:",
-                value: "Jo's Album"
+                value: defaultItem.ownername
             },
             {
                 label: "Date taken:",
@@ -51,7 +49,7 @@ describe("Component: Card", () => {
         const link = button.find(".link");
 
         expect(link).to.have.props({
-            href: defaultItem.link,
+            href: defaultItem.url_o,
             target: "_blank"
         });
     });

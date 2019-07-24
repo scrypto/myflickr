@@ -4,8 +4,7 @@ import style from './style.scss';
 
 class Card extends Component {
     render() {
-        const { author, date_taken, tags, link, media } = this.props.item;
-        const { m: thumbnail } = media;
+        const { ownername: author, datetaken, tags, url_o: link, url_n: thumbnail } = this.props.item;
 
         return (
             <div className="card">
@@ -15,11 +14,11 @@ class Card extends Component {
                 <div className="details">
                     <div className="item">
                         <span className="label">Author:</span>
-                        <span className="value">{formatUsername(author)}</span>
+                        <span className="value">{author}</span>
                     </div>
                     <div className="item">
                         <span className="label">Date taken:</span>
-                        <span className="value">{formatTimestamp(date_taken)}</span>
+                        <span className="value">{formatTimestamp(datetaken)}</span>
                     </div>
                     <div className="item">
                         <span className="label">Tags:</span>
@@ -27,9 +26,17 @@ class Card extends Component {
                     </div>
                 </div>
                 <div className="button">
-                    <a className="link" href={link} target="_blank">
-                        Open Image
-                    </a>
+                    {link && (
+                        <a className="link" href={link} target="_blank">
+                            Open Image
+                        </a>
+                    )}
+                    {!link && (
+                        <div className="link">
+                            (Original Image Not Available)
+                        </div>
+                    )}
+
                 </div>
             </div>
         )
